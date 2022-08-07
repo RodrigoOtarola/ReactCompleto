@@ -100,28 +100,74 @@
 //
 // console.log(getUserActive('Rodrigo'));
 
-const persona = {
-    nombre:'Rodrigo',
-    edad:29,
-    clave: '1234',
-    rango:'Soldado'
-};
-//Asignacion desestructurante
-// const {nombre,edad} = persona;
-// console.log(nombre);
-// console.log(edad);
+// const persona = {
+//     nombre:'Rodrigo',
+//     edad:29,
+//     clave: '1234',
+//     rango:'Soldado'
+// };
+// //Asignacion desestructurante
+// // const {nombre,edad} = persona;
+// // console.log(nombre);
+// // console.log(edad);
+//
+// const useContext = ({clave,nombre,edad,rango})=>{
+//     // console.log(nombre,edad,rango);
+//     return {
+//         nombreClave: clave,
+//         anios: edad,
+//         lating:{
+//             lat:14.123,
+//             lng:39.523
+//         }
+//     }
+// }
+// //Para lating tenga constantes de lat y lng
+// const {nombreClave,anios,lating:{lat,lng}} = useContext(persona);
+// console.log(nombreClave,anios,lat,lng);
 
-const useContext = ({clave,nombre,edad,rango})=>{
-    // console.log(nombre,edad,rango);
-    return {
-        nombreClave: clave,
-        anios: edad,
-        lating:{
-            lat:14.123,
-            lng:39.523
-        }
-    }
-}
-//Para lating tenga constantes de lat y lng
-const {nombreClave,anios,lating:{lat,lng}} = useContext(persona);
-console.log(nombreClave,anios,lat,lng);
+// //Desestructuracion de arreglos.
+// const personajes = ['Goku','Vegeta','Trunks'];
+//
+// const [,p2] = personajes;
+//
+// console.log(p2);
+//
+// const retornarArreglo = ()=>{
+//     return ['ABC',123];
+// }
+//
+// const [letras,numeros]=retornarArreglo();
+// console.log(letras,numeros);
+//
+// const State = (valor)=>{
+//     return[valor,()=>{console.log('Hola Mundo')}];
+// }
+//
+// const arr = State('Goku');
+// arr[1]()
+//
+// //Tarea 1er valor nombre, 2do valor setNombre
+// const name = (nombre)=>{
+//     return[nombre, ()=>{console.log('Andrés')}];
+// }
+// const [nombre,setNombre] = name('Rodrigo',);
+// setNombre();
+
+// //Para poder ver archivo se debe exportar desde la data, se da el nombre que una quiera.
+// //import heroes from './data/heroes';
+//
+// //importacion individual
+// import heroes,{owner} from './data/heroes';
+//
+// console.log(owner);
+//
+// //Usan find
+// const getHeroeById = (id)=>heroes.find((heroe)=>heroe.id === id);
+//
+// console.log(getHeroeById(4));
+//
+// //Usando filter
+// const getHeroesByOwner = (owner)=>heroes.filter ((heroe)=>heroe.owner === owner);
+//
+// console.log(getHeroesByOwner('Marvel'));
