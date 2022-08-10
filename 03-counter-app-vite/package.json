@@ -1,5 +1,5 @@
 {
-  "name": "vite",
+  "name": "03-counter-app-vite",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
