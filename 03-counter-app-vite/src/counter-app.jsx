@@ -1,6 +1,6 @@
  import PropTypes from 'prop-types';
  
- const CounterApp= ({value})=>{
+ export const CounterApp= ({value})=>{
     return(
         <> 
             <h1>CounterApp</h1>
@@ -9,4 +9,6 @@
     )
 }
 
-export default CounterApp;
+CounterApp.propTypes = {
+    value: PropTypes.number.isRequired
+}
