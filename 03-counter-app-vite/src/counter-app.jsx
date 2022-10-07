@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 export const CounterApp = ({ value }) => {
-
-    //Uso de hook, se olocan dos porque el primero es constante y no se puede
-    //modificar.
-    const [counter,setCounter]=useState(0);
+  //Uso de hook, se olocan dos porque el primero es constante y no se puede
+  //modificar.
+  const [counter, setCounter] = useState(0);
 
   //Se llama desde función onClick del button y para retornar valor.
   const handleAdd = () => {
@@ -20,8 +19,9 @@ export const CounterApp = ({ value }) => {
     setCounter(counter - 1);
   };
 
-  const handleReset = ()  => {setCounter(value) }
-
+  const handleReset = () => {
+    setCounter(value);
+  };
 
   return (
     <>
