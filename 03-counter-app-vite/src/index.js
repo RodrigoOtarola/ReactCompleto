@@ -22,6 +22,6 @@ import './style.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CounterApp value="10" />
+    <CounterApp value="0" />
   </React.StrictMode>
 );
