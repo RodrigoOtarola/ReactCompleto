@@ -1,8 +1,8 @@
+//Para renderizar componentes de react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-//Para renderizar componentes de react
-//import ReactDom from 'react-dom/client';
-//import {createRoot} from 'react-dom/client';
+
+
 //
 // //Componente inicial.
 // const saludo =<h1>Hola mundo</h1>;
