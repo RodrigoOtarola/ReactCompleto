@@ -12,6 +12,9 @@ export const GifExpertApp = () => {
 
     console.log(newCategory);
 
+    //Validación para que no se repitan las categorias, ocupa el CaseSensitive, para que sean iguales se debería ocupar lowercase o upperCase.
+    if (categories.includes(newCategory)) return;
+
     setCategories([newCategory, ...categories]);
   };
 
