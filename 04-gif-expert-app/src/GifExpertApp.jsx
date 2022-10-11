@@ -7,10 +7,12 @@ export const GifExpertApp = () => {
   const [categories, setCategories] = useState(["One Punch", "Prueba"]);
 
   //Agregar categories
-  const onAddCategory = () => {
+  const onAddCategory = (newCategory) => {
     //Mutar el estado, ya que no se puede ocupar push
-    //
-    setCategories(["prueba", ...categories]);
+
+    console.log(newCategory);
+
+    setCategories([newCategory, ...categories]);
   };
 
   return (
@@ -19,7 +21,10 @@ export const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
       {/*AddCategory, mandando property adicional*/}
-      <AddCategory setCategories={setCategories}/>
+      <AddCategory
+        //setCategories={setCategories}
+        onNewCategory={(value) => onAddCategory(value)}
+      />
 
       {/*lista*/}
 
@@ -28,7 +33,7 @@ export const GifExpertApp = () => {
       <ol>
         {/*map sirve para barrer los elementos del arreglo y colocar algo nuevo*/}
         {categories.map((category) => {
-          return <li key={category}>{category}</li>
+          return <li key={category}>{category}</li>;
         })}
       </ol>
     </>
