@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const AddCategory = () => {
   
@@ -22,5 +22,5 @@ export const AddCategory = () => {
         onChange={ onInputChange }
       />
     </form>
-  );
-};
+  )
+}
