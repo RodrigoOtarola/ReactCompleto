@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import React from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
   //Inicializar el useState no se recomienda dejarlo vacio
@@ -19,7 +20,7 @@ export const GifExpertApp = () => {
   };
 
   return (
-    <>
+    <Fragment>
       {/*titulo */}
       <h1>GifExpertApp</h1>
 
@@ -29,16 +30,13 @@ export const GifExpertApp = () => {
         onNewCategory={(value) => onAddCategory(value)}
       />
 
-      {/*lista*/}
-
       <button onClick={onAddCategory}>Agregar</button>
 
-      <ol>
-        {/*map sirve para barrer los elementos del arreglo y colocar algo nuevo*/}
-        {categories.map((category) => {
-          return <li key={category}>{category}</li>;
-        })}
-      </ol>
-    </>
+      {/*map sirve para barrer los elementos del arreglo y colocar algo nuevo, Se debe pasar la key y la category*/}
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
+      
+    </Fragment>
   );
 };
