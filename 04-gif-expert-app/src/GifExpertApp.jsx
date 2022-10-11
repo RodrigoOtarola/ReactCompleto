@@ -11,7 +11,7 @@ export const GifExpertApp = () => {
   const onAddCategory = (newCategory) => {
     //Mutar el estado, ya que no se puede ocupar push
 
-    console.log(newCategory);
+    //console.log(newCategory);
 
     //Validación para que no se repitan las categorias, ocupa el CaseSensitive, para que sean iguales se debería ocupar lowercase o upperCase.
     if (categories.includes(newCategory)) return;
@@ -36,7 +36,7 @@ export const GifExpertApp = () => {
       {categories.map((category) => (
         <GifGrid key={category} category={category} />
       ))}
-      
+
     </Fragment>
   );
 };

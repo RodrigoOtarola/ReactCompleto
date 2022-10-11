@@ -1,15 +1,13 @@
 import React, { Fragment } from "react";
+import { getGifs } from "../helpers/getGifs";
 
-//Para realizar busquedas de parametros.
+export const GifGrid = ({ category }) => {
+  getGifs(category);
 
-//Petición a API.
-
-
-export const GifGrid = ({category}) => {
   return (
     <Fragment>
-        <h3>{category}</h3>
-        <p>Hola mundo</p>
+      <h3>{category}</h3>
+      <p>Hola mundo</p>
     </Fragment>
-  )
+  );
 };
