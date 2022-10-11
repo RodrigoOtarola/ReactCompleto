@@ -1,26 +1,31 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export const AddCategory = () => {
-  
-  const [inputValue, setInputValue] = useState("one Punch");
+export const AddCategory = ({ setCategories }) => {
+  const [inputValue, setInputValue] = useState("");
 
   const onInputChange = ({ target }) => {
     setInputValue(target.value);
-  }
+  };
 
-  const onSubmit =(event)=>{
+  const onSubmit = (event) => {
     event.preventDefault();
-    console.log(inputValue);
-  }
+    //Validación para de input, trim es para eliminar espacios adelante y atras.
+    if (inputValue.trim().length <= 1) return;
+
+    //console.log(inputValue);
+    setCategories((categories) => [inputValue, ...categories]);
+    //Post insertar volver el input a vacio
+    setInputValue('');
+  };
 
   return (
-    <form onSubmit={(event)=>onSubmit(event)}>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         placeholder="Buscar gifs"
-        value={ inputValue }
-        onChange={ onInputChange }
+        value={inputValue}
+        onChange={onInputChange}
       />
     </form>
-  )
-}
+  );
+};

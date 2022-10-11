@@ -18,8 +18,8 @@ export const GifExpertApp = () => {
       {/*titulo */}
       <h1>GifExpertApp</h1>
 
-      {/*AddCategory*/}
-      <AddCategory />
+      {/*AddCategory, mandando property adicional*/}
+      <AddCategory setCategories={setCategories}/>
 
       {/*lista*/}
 
