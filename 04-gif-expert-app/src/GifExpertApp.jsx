@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import React from "react";
+import { AddCategory } from "./components/AddCategory";
 
 export const GifExpertApp = () => {
   //Inicializar el useState no se recomienda dejarlo vacio
@@ -9,13 +10,16 @@ export const GifExpertApp = () => {
   const onAddCategory =()=>{
     //Mutar el estado, ya que no se puede ocupar push
     //
-    setCategories( [...categories,'prueba'] );
+    setCategories( ['prueba', ...categories] );
   };
 
   return (
     <>
       {/*titulo */}
       <h1>GifExpertApp</h1>
+
+     {/*AddCategory*/}
+     <AddCategory />
 
       {/*lista*/}
       <button onClick={onAddCategory}>Agregar</button>
