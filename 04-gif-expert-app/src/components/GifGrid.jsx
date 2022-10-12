@@ -5,21 +5,29 @@ import { getGifs } from "../helpers/getGifs";
 
 export const GifGrid = ({ category }) => {
 
-  const [counter, setCounter] = useState(10);
+  const [images, setImages] = useState([]);
+
+  const getImages = async() => {
+    const newImages = await getGifs( category );
+    setImages(newImages);
+  }
+
 
   //useEffect 1er parametro es una function y al final se pasa arreglo vacio
   useEffect(()=>{
-    getGifs(category);
+    getImages();
   },[])
   
-  getGifs(category);
 
   return (
     <Fragment>
-      <h3>{category}</h3>
-      <p>Hola mundo</p>
-      <h5>{counter}</h5>
-      <button onClick={()=>setCounter(counter +1)}>+1</button>
+      <h3>{category}</h3>      
+      <ol>
+        {images.map((image)=>
+          <li key={image.id}>{image.title}</li>
+        )}        
+      </ol>
+
     </Fragment>
   );
 };
