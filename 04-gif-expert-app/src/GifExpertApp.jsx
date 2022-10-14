@@ -1,7 +1,10 @@
 import { Fragment, useState } from "react";
 import React from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+
+import { AddCategory,GifGrid } from "./components";
+
+/*import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";*/
 
 export const GifExpertApp = () => {
   //Inicializar el useState no se recomienda dejarlo vacio
