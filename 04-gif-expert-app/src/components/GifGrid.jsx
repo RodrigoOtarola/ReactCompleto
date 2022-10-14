@@ -1,22 +1,17 @@
 import React, { Fragment } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { getGifs } from "../helpers/getGifs";
+//import { getGifs } from "../helpers/getGifs";
 import { GifItem } from "./GifItem";
 import "../style.css";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid = ({ category }) => {
-  const [images, setImages] = useState([]);
 
-  const getImages = async () => {
-    const newImages = await getGifs(category);
-    setImages(newImages);
-  };
+  //Custom hooks
+  const {images, isLoading} = useFetchGifs ( category);
 
-  //useEffect 1er parametro es una function y al final se pasa arreglo vacio
-  useEffect(() => {
-    getImages();
-  }, []);
+  console.log(isLoading);
 
   return (
     <Fragment>
